@@ -1,7 +1,7 @@
 |PyPI version| |Docs badge| |License|
 
 sphinxext-versionwarning
-======================
+========================
 
 ``sphinxext-versionwarning
 `` is a Sphinx extension that shows a customizable

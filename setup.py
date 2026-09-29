@@ -14,9 +14,10 @@ setuptools.setup(
     description="Sphinx extension to add a warning banner",
     url="https://github.com/grahamsh-llk/sphinx-version-warning",
     packages=setuptools.find_packages(),
+    package_data={"versionwarning": ["_static/js/versionwarning.js"]},
     long_description=long_description,
     long_description_content_type="text/x-rst",
-    include_package_data=True,
+    include_package_data=False,
     zip_safe=False,
     classifiers=(
         "Programming Language :: Python :: 3",
