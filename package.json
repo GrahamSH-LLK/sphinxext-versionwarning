@@ -1,5 +1,5 @@
 {
-  "name": "sphinxext-version-warning",
+  "name": "sphinxext-versionwarning",
   "version": "1.1.7",
   "dependencies": {
     "semver": "^7.8.5",

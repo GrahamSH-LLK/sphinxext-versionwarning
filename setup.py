@@ -7,7 +7,7 @@ with open("README.rst", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="sphinxext-version-warning",
+    name="sphinxext-versionwarning",
     version=versionwarning.version,
     author="Manuel Kaufmann, Graham Howard",
     author_email="sphinx@grahamsh.com",

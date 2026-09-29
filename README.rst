@@ -1,9 +1,9 @@
 |PyPI version| |Docs badge| |License|
 
-sphinxext-version-warning
+sphinxext-versionwarning
 ======================
 
-``sphinxext-version-warning
+``sphinxext-versionwarning
 `` is a Sphinx extension that shows a customizable
 warning banner at the top of versioned documentation hosted on Read the Docs.
 It uses the Read the Docs Addons data to compare the version being viewed with
@@ -15,7 +15,7 @@ Installation
 
 ::
 
-   pip install sphinxext-version-warning
+   pip install sphinxext-versionwarning
 
 
 
@@ -49,8 +49,8 @@ Check out the documentation for the original version at https://sphinx-version-w
 .. _installation documentation: https://sphinx-version-warning.readthedocs.io/en/latest/installation.html
 
 
-.. |PyPI version| image:: https://img.shields.io/pypi/v/sphinxext-version-warning.svg
-   :target: https://pypi.org/project/sphinxext-version-warning
+.. |PyPI version| image:: https://img.shields.io/pypi/v/sphinxext-versionwarning.svg
+   :target: https://pypi.org/project/sphinxext-versionwarning
    :alt: Current PyPI version
 .. |Docs badge| image:: https://readthedocs.org/projects/sphinx-version-warning/badge/?version=latest
    :target: https://sphinx-version-warning.readthedocs.io/en/latest/?badge=latest
