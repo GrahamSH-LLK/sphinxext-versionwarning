@@ -4,8 +4,8 @@ import json
 import os
 
 
-STATIC_PATH = os.path.join(os.path.dirname(__file__), '_static')
-JSON_DATA_FILENAME = 'versionwarning-data.json'
+STATIC_PATH = os.path.join(os.path.dirname(__file__), "_static")
+JSON_DATA_FILENAME = "versionwarning-data.json"
 
 
 def generate_versionwarning_data_json(app, config=None, **kwargs):
@@ -23,13 +23,15 @@ def generate_versionwarning_data_json(app, config=None, **kwargs):
     # In Sphinx >= 1.8 we use ``config-initied`` signal which comes with the
     # ``config`` object and in Sphinx < 1.8 we use ``builder-initied`` signal
     # that doesn't have the ``config`` object and we take it from the ``app``
-    config = config or kwargs.pop('config', None)
+    config = config or kwargs.pop("config", None)
     if config is None:
         config = app.config
 
     if config.versionwarning_project_version in config.versionwarning_messages:
         custom = True
-        message = config.versionwarning_messages.get(config.versionwarning_project_version)
+        message = config.versionwarning_messages.get(
+            config.versionwarning_project_version
+        )
     else:
         custom = False
         message = config.versionwarning_default_message
@@ -43,29 +45,30 @@ def generate_versionwarning_data_json(app, config=None, **kwargs):
         admonition_type=config.versionwarning_admonition_type,
     )
 
-    data = json.dumps({
-        'meta': {
-            'stable_as_highest': config.versionwarning_stable_as_highest 
+    data = json.dumps(
+        {
+            "meta": {"stable_as_highest": config.versionwarning_stable_as_highest},
+            "banner": {
+                "html": banner_html,
+                "id_div": config.versionwarning_banner_id_div,
+                "body_selector": config.versionwarning_body_selector,
+                "custom": custom,
+            },
+            "project": {
+                "slug": config.versionwarning_project_slug,
+            },
+            "version": {
+                "slug": config.versionwarning_project_version,
+            },
         },
-        'banner': {
-            'html': banner_html,
-            'id_div': config.versionwarning_banner_id_div,
-            'body_selector': config.versionwarning_body_selector,
-            'custom': custom,
-        },
-        'project': {
-            'slug': config.versionwarning_project_slug,
-        },
-        'version': {
-            'slug': config.versionwarning_project_version,
-        },
-    }, indent=4)
+        indent=4,
+    )
 
-    data_path = os.path.join(STATIC_PATH, 'data')
+    data_path = os.path.join(STATIC_PATH, "data")
     if not os.path.exists(data_path):
         os.mkdir(data_path)
 
-    with open(os.path.join(data_path, JSON_DATA_FILENAME), 'w') as f:
+    with open(os.path.join(data_path, JSON_DATA_FILENAME), "w") as f:
         f.write(data)
 
     # Add the path where ``versionwarning-data.json`` file and
