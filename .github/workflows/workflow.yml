@@ -26,6 +26,8 @@ jobs:
         run: |
           npm install --no-package-lock
           npm run build
+      - name: Check generated JavaScript is up to date
+        run: git diff --exit-code -- versionwarning/_static/js/versionwarning.js
       - name: Build and check Python distributions
         run: |
           python -m pip install --upgrade build twine
