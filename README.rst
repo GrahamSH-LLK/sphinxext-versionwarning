@@ -3,11 +3,8 @@
 sphinxext-versionwarning
 ========================
 
-``sphinxext-versionwarning
-`` is a Sphinx extension that shows a customizable
-warning banner at the top of versioned documentation hosted on Read the Docs.
-It uses the Read the Docs Addons data to compare the version being viewed with
-the highest active semantic version.
+``sphinxext-versionwarning`` is a Sphinx extension that shows a customizable warning banner at the top of versioned documentation hosted on Read the Docs.
+It uses the Read the Docs Addons data to compare the version being viewed with the highest active semantic version.
 
 
 Installation
