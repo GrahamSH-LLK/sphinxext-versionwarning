@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 import os
-import sphinx
 from versionwarning import version
 from .signals import generate_versionwarning_data_json
 
@@ -38,15 +37,9 @@ def setup(app):
         "html",
     )
     app.add_config_value("versionwarning_stable_as_highest", False, "html")
-    if sphinx.version_info >= (1, 8):
-        # ``config-initied`` requires Sphinx >= 1.8
-        app.connect("config-inited", generate_versionwarning_data_json)
+    app.connect("config-inited", generate_versionwarning_data_json)
 
-        # ``add_js_file`` requires Sphinx >= 1.8
-        app.add_js_file("js/versionwarning.js")
-    else:
-        app.connect("builder-inited", generate_versionwarning_data_json)
-        app.add_javascript("js/versionwarning.js")
+    app.add_js_file("js/versionwarning.js", type="module")
 
     return {
         "version": version,

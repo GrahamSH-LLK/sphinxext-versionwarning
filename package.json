@@ -1,6 +1,6 @@
 {
   "name": "sphinxext-versionwarning",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "dependencies": {
     "semver": "^7.8.5",
     "webpack": "^5.111.1",
